@@ -2,9 +2,9 @@
   "meta": {
     "project": "Radar História RJ",
     "verifiedAt": "2026-11-13",
-    "updatedAt": "2026-11-13T15:08:18-03:00",
+    "updatedAt": "2026-11-13T20:54:40-03:00",
     "method": "Curadoria inicial com fontes institucionais e banca oficial. Datas e condições podem mudar; prevalece o edital.",
-    "automaticScanAt": "2026-11-13T15:08:18-03:00",
+    "automaticScanAt": "2026-11-13T20:54:40-03:00",
     "scanStatus": "9 fontes/consultas acessadas, 1 novos achados sem confirmação"
   },
   "opportunities": [
@@ -561,6 +561,33 @@
         "Notícia a conferir"
       ],
       "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPNVlHczFZVUVHaVoxNHgyaWpsTUlzRmp2TXp5dVlfX3FBSXZnUktIOWhjbjV2WjgtdW05ekpzUnVaSENyeVRfNC1rU1lhcFFPdlpYbzF2RnVHbjlkc3p6U1FSZmdCRmI3NWNzYjB5UjZDWlJaQnBEbFk4Ri1GaTBRRGVjN1RlTHNLMEIycFo5U2otMGx2Zkk2LQ?oc=5",
+      "sourceName": "Google Notícias · publicação a confirmar",
+      "verifiedAt": "2026-11-13",
+      "firstSeenAt": "2026-11-13",
+      "origin": "descoberta"
+    },
+    {
+      "id": "radar-128a467202b655",
+      "title": "Entrevista: 'A direção do PT estava desconectada da sua base social', diz historiador Lincoln Secco - O GLOBO",
+      "org": "Google Notícias · publicação a confirmar",
+      "city": "Estado do Rio",
+      "region": "A confirmar",
+      "category": "historiador",
+      "type": "A confirmar",
+      "modality": "A confirmar",
+      "start": null,
+      "end": null,
+      "deadlineTime": null,
+      "slots": "Verificar edital",
+      "salary": null,
+      "education": "Consultar fonte e requisitos específicos",
+      "description": "Achado na varredura automática de fontes públicas. Verifique se o cargo atende à formação em História, se o edital está vigente e quais são os prazos.",
+      "tags": [
+        "Novo achado",
+        "Conferir edital",
+        "Notícia a conferir"
+      ],
+      "url": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxQNmpwVENqSV9WSWVnMnJfVi1PRnV6RjRQVk1ZaUZpT19YNHBybEE2M2lhQTZ5UW14V0JDMm9zbjlPQlppVTlxTk8xTjhUQmdmY1lZTGp1Z2lvOXJmVVJuZVJOQWpGYXNuaHRjdFo1bTRKYUpwM0xSTUVQWFl6YWVBdGRSMTRhS1Q4RFpJYWt4akVjZFRSSndhWlJfTXI0cVB6bFFQb1ZIVk5yWklUTkZNbEJ6dlprTS1jQTV5b0xCSm9seTBkellWczNtS0szZEExU1JnTWRaWW5XOUVieVVmbno5Tk1TTnNUT1V2LVJ30gH8AUFVX3lxTE81Z01tWGRpeElIRS1GVmxJUS1PZ1NQS0Vvd2lsSDEtYzhoLWpOZGhuZFM2VU9lN3NwcnZNZlJob0s4U05VSnprS2VOcFlndzhuMEJnWXpBNzRPNkNsMHllUXd0MHNpT1NCaWN6M1hPVzlNdEVBVk9JaU1qTkx6bVgzMTdOZ0VmdU9vcFh0bm5iMDZrN2NQWFRIOGRnNE1iaFFxcF93a2hxOEw3OFZYRmt4bWw4OC1acXRGWHhGcTMtMmJlVnp2UU0tMDhiZWNYNkgxLTVrZEdvelhSRUtSSW93Zk8xbGlid3hfQ3JtZXhhXzFPSGM2Q3pxOWc2NQ?oc=5",
       "sourceName": "Google Notícias · publicação a confirmar",
       "verifiedAt": "2026-11-13",
       "firstSeenAt": "2026-11-13",
