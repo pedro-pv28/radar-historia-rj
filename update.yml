@@ -1,0 +1,50 @@
+name: Atualizar e publicar Radar História RJ
+on:
+  push:
+    branches: [main, principal]
+  workflow_dispatch:
+  schedule:
+    - cron: '5 11 * * *' # por volta de 8h05 no horário de Brasília
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+jobs:
+  update-and-publish:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Obter código
+        uses: actions/checkout@v4
+      - name: Preparar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Instalar dependências
+        run: pip install -r requirements.txt
+      - name: Ler fontes e adicionar achados para conferência
+        continue-on-error: true # se as fontes bloquearem robôs, ainda publicamos a última versão válida
+        run: python scripts/update_opportunities.py
+      - name: Salvar catálogo no repositório
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/opportunities.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'chore: atualizar radar diário'
+            git push
+          fi
+      - name: Configurar GitHub Pages
+        uses: actions/configure-pages@v5
+      - name: Empacotar site
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+      - name: Publicar site
+        id: deployment
+        uses: actions/deploy-pages@v4
