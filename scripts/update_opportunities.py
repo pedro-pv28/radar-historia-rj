@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Radar História RJ — varredura diária orientativa.
+"""Radar História RJ — varredura recorrente orientativa.
 
 O robô NUNCA declara uma inscrição aberta: novos achados permanecem 'Em apuração'
 até o responsável conferir o edital e promovê-los para opportunities.
@@ -26,13 +26,17 @@ ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / 'data' / 'opportunities.json'
 TZ = timezone(timedelta(hours=-3))
 NOW = datetime.now(TZ)
-UA = 'RadarHistoriaRJ/1.0 (+educational public vacancy watcher; honors source policies)'
+UA = 'RadarHistoriaRJ/2.0 (+public opportunity indexer; honors source policies)'
 SOURCES = [
     ('UERJ - PROSSIM', 'https://prossim.uerj.br/public/carregar_selecao', 'Rio de Janeiro'),
     ('UFRJ - PR4', 'https://concursos.pr4.ufrj.br/category/concursos/', 'Rio de Janeiro'),
     ('UFRRJ', 'https://servicos.ufrrj.br/concursos/index.php?acao=concursos_abertos', 'Seropédica'),
     ('Prefeitura do Rio', 'https://concurso.prefeitura.rio/', 'Rio de Janeiro'),
     ('SEEDUC-RJ', 'https://www.seeduc.rj.gov.br/professor/contrata%C3%A7%C3%A3o-tempor%C3%A1ria', 'Estado do Rio'),
+    ('Fundação Casa de Rui Barbosa', 'https://www.gov.br/casaruibarbosa/pt-br/a-fundacao/editais-e-oportunidades/selecoes_publicas', 'Rio de Janeiro'),
+    ('Secretaria Municipal de Cultura', 'https://cultura.prefeitura.rio/', 'Rio de Janeiro'),
+    ('Secretaria Estadual de Cultura', 'https://cultura.rj.gov.br/', 'Estado do Rio'),
+    ('Elite Rede de Ensino - carreiras', 'https://elite.gupy.io/', 'Estado do Rio'),
 ]
 # RSS serve como pista, NÃO como verificação de abertura ou elegibilidade.
 QUERIES = [
@@ -40,8 +44,14 @@ QUERIES = [
     '"historiador" (concurso OR seleção OR edital) "Rio de Janeiro"',
     '"professor história" "processo seletivo" "Rio de Janeiro"',
     '"educação patrimonial" (vaga OR edital OR seleção) "RJ"',
+    '"professor de história" "vaga" "colégio" "Rio de Janeiro"',
+    '"professor de história" (Elite OR Gupy OR escola) "RJ"',
+    '"historiador" (museu OR arquivo OR patrimônio) "Rio de Janeiro" vaga',
+    '"pesquisador de acervo" (vaga OR seleção) "Rio de Janeiro"',
+    '"historiador" "clube" (vaga OR seleção) "Rio de Janeiro"',
+    '"professor de história" (CLT OR contratação) "Rio de Janeiro"',
 ]
-STRONG = re.compile(r'\b(historiador(?:a|es)?|professor(?:a|es)?.{0,55}hist[oó]ria|hist[oó]ria\s+(?:antiga|moderna|do\s+brasil|da\s+am[eé]rica)|teoria\s+e\s+metodologia\s+da\s+hist[oó]ria|educa[cç][aã]o\s+patrimonial|mem[oó]ria\s+institucional)\b', re.I)
+STRONG = re.compile(r'\b(historiador(?:a|es)?|professor(?:a|es)?.{0,55}hist[oó]ria|docente.{0,55}hist[oó]ria|hist[oó]ria\s+(?:antiga|moderna|do\s+brasil|da\s+am[eé]rica)|teoria\s+e\s+metodologia\s+da\s+hist[oó]ria|educa[cç][aã]o\s+patrimonial|mem[oó]ria\s+institucional)\b', re.I)
 EXCLUDE = re.compile(r'\b(resultado\s+final|homologa[cç][aã]o|gabarito\s+definitivo|classifica[cç][aã]o\s+final|prorroga[cç][aã]o\s+do\s+concurso\s+de\s+20[01])\b', re.I)
 
 
@@ -101,7 +111,7 @@ def new_candidate(title, url, source, city, record_kind):
         'description': 'Achado na varredura automática de fontes públicas. Verifique se o cargo atende à formação em História, se o edital está vigente e quais são os prazos.',
         'tags': ['Novo achado', 'Conferir edital', record_kind],
         'url': url, 'sourceName': source, 'verifiedAt': NOW.date().isoformat(),
-        'firstSeenAt': NOW.date().isoformat(), 'origin': 'descoberta'
+        'firstSeenAt': NOW.date().isoformat(), 'origin': 'descoberta', 'sector': 'a confirmar'
     }
 
 
@@ -138,12 +148,23 @@ def scan_rss(query):
     raw = get(url).content
     root = ET.fromstring(raw)
     results = []
-    for item in root.findall('.//channel/item')[:30]:
+    for item in root.findall('.//channel/item')[:25]:
         title = (item.findtext('title') or '').strip()
         href = item.findtext('link') or ''
         pub = item.findtext('pubDate') or ''
         if not meaningful(title):
             continue
+        # Notícias antigas não devem virar novidades só porque foram reindexadas.
+        if pub:
+            try:
+                from email.utils import parsedate_to_datetime
+                published = parsedate_to_datetime(pub)
+                if published.tzinfo is None:
+                    published = published.replace(tzinfo=timezone.utc)
+                if published < NOW.astimezone(timezone.utc) - timedelta(days=21):
+                    continue
+            except (TypeError, ValueError):
+                continue
         if len(href) > 2000 or not href.startswith('https://'):
             continue
         # Google News RSS can reference broad state-wide news; candidate NOT asserted valid.
@@ -182,7 +203,7 @@ def main():
         print('Nenhuma fonte acessível. Arquivo preservado.\n' + '\n'.join(errors), file=sys.stderr)
         return 1
     for candidate in potential:
-        if len(previous) >= 50:
+        if len(previous) >= 60:
             break
         if candidate['id'] in all_ids or candidate['url'] in all_urls:
             continue
@@ -196,7 +217,7 @@ def main():
         all_ids.add(candidate['id'])
         found += 1
     # Remove old unreviewed leads to keep the interface useful. Verified curation is untouched.
-    cutoff = (NOW - timedelta(days=65)).date().isoformat()
+    cutoff = (NOW - timedelta(days=21)).date().isoformat()
     previous = [x for x in previous if x.get('firstSeenAt', x.get('verifiedAt', '9999-12-31')) >= cutoff]
     data['discovered'] = previous
     data['meta']['automaticScanAt'] = NOW.isoformat(timespec='seconds')
