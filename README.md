@@ -1,57 +1,48 @@
-# Radar História RJ
+# Radar História RJ — versão 2.0
 
-Site independente, responsivo e sem necessidade de backend pago para acompanhar **concursos e processos seletivos para professores de História, historiadores e vagas ligadas ao patrimônio cultural no estado do Rio de Janeiro**.
+**Site para o Rio de Janeiro:** https://pedro-pv28.github.io/radar-historia-rj/
 
-## O que está pronto
+Esta atualização incorpora a identidade editorial aprovada (creme, vinho e oliva), a seção **Últimas oportunidades**, pesquisa com filtros, áreas acadêmicas em separado, indicadores de apuração, páginas para indicar vagas, detalhes de salário, prazos, requisitos e vínculo, favoritos e exportação CSV.
 
-- Catálogo inicial de **11 oportunidades/linhas de seleção** mapeadas em **13/11/2026**, com links para portais institucionais e banca oficial. Inclui Italva, Sumidouro, Porciúncula, Vassouras, UERJ, UFRJ e UFRRJ.
-- Filtros por cargo, região, município, tipo, inscrição online/presencial e situação; busca e ordenação.
-- Status das inscrições calculado no horário de Brasília: abertas, previstas, vencidas, ou em apuração.
-- Agenda de prazos, favoritos salvos no próprio navegador, exportação CSV e evento `.ics` para calendário.
-- Lista separada de achados automáticos **sem confirmação**, evitando afirmar que notícias ou links antigos são vagas abertas.
+## Instalação — sem perder os anúncios que já estão no GitHub
 
-## Abrir agora
+**Importante: este pacote de atualização NÃO contém `data/opportunities.json` de propósito.** Assim, os dados que seu GitHub já descobriu não serão substituídos por uma versão antiga. O site usa esse mesmo arquivo no endereço `data/opportunities.json` e se adapta ao formato anterior.
 
-Dê dois cliques em `index.html` no computador. O site funciona **offline com o catálogo inicial**. O botão *Atualizar* precisa de hospedagem para ler o JSON do servidor; não busca editais diretamente do navegador (restrições de CORS dos órgãos).
+1. **Guarde um backup:** no repositório do GitHub, use `Code → Download ZIP` antes de atualizar.
+2. Acesse https://github.com/pedro-pv28/radar-historia-rj e abra `index.html`. Para **substituir**, escolha o ícone de lápis e cole o novo conteúdo do `index.html` deste pacote (se preferir, exclua o arquivo antigo e envie o novo de mesmo nome). Faça `Commit changes`. Este `index.html` é **autossuficiente**: tem CSS, JS, arte e dados de demonstração embutidos, sem precisar enviar a pasta `assets/`.
+3. Para atualizar a frequência de varredura, substitua `.github/workflows/update.yml` pelo arquivo de mesmo caminho do pacote.
+4. Substitua `scripts/update_opportunities.py` pela versão do pacote.
+5. Adicione `.github/ISSUE_TEMPLATE/divulgar-vaga.yml` (e habilite `Issues` no repositório se ainda estiver desativado). Para esse formulário funcionar, o visitante precisa ter conta no GitHub.
+6. Mantenha **o seu `data/opportunities.json` existente**. Nunca o exclua nem o substitua pelo exemplo embutido no site.
+7. Abra a guia **Actions → Atualizar e publicar Radar História RJ → Run workflow**, selecionando a branch padrão. O Pages continuará no endereço atual.
 
-## Publicar gratuitamente e ligar a verificação diária
+### Se preferir subir arquivos por arrastar e soltar
 
-1. Crie um repositório público no GitHub (por exemplo `radar-historia-rj`) e **envie o conteúdo da pasta**, mantendo `index.html` na raiz, `data/`, `scripts/` e `.github/`.
-2. Em **Settings → Pages → Build and deployment**, selecione **GitHub Actions** como fonte de publicação; salve. Seu endereço será semelhante a `https://SEU-USUARIO.github.io/radar-historia-rj/` (substitua pelo usuário e nome reais).
-3. Em **Settings → Actions → General**, habilite Actions e, se necessário, permita que o workflow grave no repositório. O arquivo incluído já declara as permissões de `contents`, `pages` e `id-token`.
-4. Em **Actions → Atualizar e publicar Radar História RJ → Run workflow**, execute a primeira publicação, ou simplesmente envie os arquivos à branch `main` (o workflow também roda no `push`). As próximas execuções ficam agendadas diariamente (em torno de 8h05 em Brasília, sujeitas a atrasos e suspensões da plataforma).
-5. A atualização escreve em `data/opportunities.json`, publica o site via GitHub Pages e o navegador busca o catálogo na abertura, no botão *Atualizar* e periodicamente enquanto a página estiver aberta.
+Arraste os arquivos de uma pasta do Windows para a página de upload **preservando seus caminhos**. O GitHub costuma achatar os caminhos ao selecionar pelo seletor de arquivos. Confira que `.github/workflows/update.yml`, `scripts/update_opportunities.py` e `.github/ISSUE_TEMPLATE/divulgar-vaga.yml` apareçam exatamente nesses caminhos.
 
-> **Importante:** a busca automática só cria pistas com status **Em apuração**. A publicação de uma vaga como **confirmada**, com datas, requisitos e vagas, depende de revisar o edital. O robô não determina automaticamente se uma inscrição está realmente aberta. A automação não envia e-mails nem notificações push com o navegador fechado.
+### O que a atualização faz
 
-## Conferir uma descoberta e promover à lista principal
+- **Oportunidades**: docência básica, historiadores e cultura/patrimônio; filtros por município, região, setor, tipo, situação, favoritos.
+- **Vida acadêmica**: concursos de magistério superior e seleções relacionadas a universidades.
+- **Em apuração**: descobertas automáticas e anúncios de área correlata que ainda não estão comprovados para História. Não são contados como oportunidades confirmadas.
+- **Divulgar uma vaga**: formulário público de indicação pelo GitHub Issues, sem publicação automática. É necessário login no GitHub.
+- **Remuneração, prazo, horários e requisitos**: o site exibe o que consta nos dados e informa **Não informado** quando falta. Não cria salários nem datas.
+- **Últimas oportunidades**: só anúncios cujo vínculo com História foi identificado, de acordo com a última curadoria cadastrada; prazos encerrados deixam de aparecer nos destaques.
+- **Avisos na página**: opção local, só enquanto a aba estiver aberta. **Não envia e-mail nem push com o navegador fechado**. Favoritos são locais do navegador.
+- **Varredura agendada**: a cada 2 horas (12 tentativas/dia), se o GitHub Actions executar normalmente. Fonte indisponível não apaga os dados. A rotina só produz possíveis anúncios **Em apuração**; não confirma editais automaticamente.
 
-Abra `data/opportunities.json`, copie o registro desejado de `discovered` para `opportunities`, marque `origin: "verificado"` após a checagem, corrija `org`, `city`, `region`, `title`, `type`, `modality`, `start`, `end`, `deadlineTime`, `slots`, `url`, `sourceName` e `verifiedAt`, e apague o registro de `discovered`. Faça um commit; a página refletirá a mudança. **Não complete campos por suposição.**
+## Limitações importantes
 
-### Modelo dos dados
+- A API oficial de vagas da Gupy requer **token**, segundo a própria documentação. Não há acesso integral automático a Gupy, Elite ou a todas as escolas privadas; as buscas públicas são apenas complementares, e cada carreira exige integração adicional.
+- O GitHub Actions pode atrasar, falhar ou ficar desativado; por isso **24h de atualização ininterrupta não é garantido**.
+- Notícia de vaga não equivale a inscrição aberta. Prazo oficial, retificação e titulação devem ser conferidos na fonte antes da candidatura.
+- Divulgação no GitHub Issues depende de moderação humana para virar registro confirmado.
+- Não há backend de contas, e-mails ou notificações push. Isso exige solução adicional e cuidados com privacidade.
 
-- `opportunities`: concursos com dados revistos manualmente. `origin=verificado` indica confirmação da publicação, **não** elegibilidade individual.
-- `origin=correlata`: processo real que pode abranger História, mas precisa de confirmação do componente curricular.
-- `discovered` e `origin=descoberta`: links capturados pela varredura, sem validação de cargo, requisitos ou datas.
-- `meta.verifiedAt`: data da última curadoria manual (não é alterada pelo robô).
-- `meta.automaticScanAt`: data da última execução com pelo menos uma fonte acessível.
+## Próximos aprimoramentos possíveis
 
-## Rodar a varredura no seu computador
+Monitorar diretamente APIs consentidas de empregadores privados, criar moderação mais simples, cadastrar fontes dos 92 municípios e implantar alertas por e-mail com opt-in e descadastro.
 
-```bash
-python -m pip install -r requirements.txt
-python scripts/update_opportunities.py
-python -m http.server 8000
-```
+---
 
-Depois acesse `http://localhost:8000/`.
-
-## Limitações e transparência
-
-- As páginas oficiais podem mudar estrutura ou bloquear a leitura automatizada; uma varredura não substitui acompanhamento humano.
-- Uma publicação sobre "História" não significa, por si só, uma vaga destinada a um licenciado ou bacharel na área.
-- Alguns concursos de magistério superior podem exigir pós-graduação; avalie o edital e sua situação acadêmica.
-- Favoritos ficam armazenados **localmente no navegador** e não sincronizam entre aparelhos.
-- Não existe cadastro de usuário, backend de notificações nem hospedagem criada automaticamente por este pacote.
-
-**Projeto independente**, sem vínculo com prefeituras, universidades ou bancas organizadoras.
+Iniciativa independente, sem vínculo institucional com prefeituras, universidades, escolas ou bancas. O edital original sempre prevalece.
