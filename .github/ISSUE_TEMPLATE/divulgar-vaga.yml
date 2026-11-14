@@ -1,0 +1,76 @@
+name: Divulgar uma oportunidade
+# Formulário público, enviado como Issue do GitHub; não publica automaticamente no catálogo.
+description: Indique um concurso, seleção, emprego ou projeto para profissionais de História no RJ.
+title: '[Indicação de vaga] '
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Obrigado por colaborar! A equipe irá conferir a fonte e os requisitos antes de divulgar. Não inclua documentos pessoais, telefones particulares ou dados sensíveis.
+  - type: input
+    id: title
+    attributes:
+      label: Cargo ou nome da oportunidade
+      placeholder: Ex. Professor(a) de História, Historiador(a), Pesquisador(a) de acervo
+    validations:
+      required: true
+  - type: input
+    id: institution
+    attributes:
+      label: Instituição responsável
+      placeholder: Nome da escola, prefeitura, museu ou empresa
+    validations:
+      required: true
+  - type: input
+    id: city
+    attributes:
+      label: Município do Rio de Janeiro
+      placeholder: Ex. Nova Iguaçu
+    validations:
+      required: true
+  - type: dropdown
+    id: sector
+    attributes:
+      label: Tipo de instituição
+      options:
+        - Pública
+        - Privada
+        - Organização da sociedade civil / terceiro setor
+        - Não sei informar
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Link do anúncio ou edital original
+      placeholder: https://...
+      description: Envie o link da instituição ou banca, se possível.
+    validations:
+      required: true
+  - type: input
+    id: deadline
+    attributes:
+      label: Prazo de inscrição (se informado)
+      placeholder: Ex. 18/12/2026 às 17h, ou não informado
+    validations:
+      required: false
+  - type: input
+    id: salary
+    attributes:
+      label: Salário ou remuneração (se informado)
+    validations:
+      required: false
+  - type: textarea
+    id: notes
+    attributes:
+      label: Informações adicionais
+      description: Requisitos, formação exigida, jornada, contato institucional e outras observações úteis.
+    validations:
+      required: false
+  - type: checkboxes
+    id: acknowledge
+    attributes:
+      label: Confirmação
+      options:
+        - label: Entendo que esta indicação será analisada antes de aparecer como vaga confirmada.
+          required: true
