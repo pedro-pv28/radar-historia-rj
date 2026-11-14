@@ -4,7 +4,7 @@ on:
     branches: [main, principal]
   workflow_dispatch:
   schedule:
-    - cron: '5 11 * * *' # por volta de 8h05 no horário de Brasília
+    - cron: '21 */2 * * *' # 12 varreduras programadas por dia (UTC), sujeitas a atrasos da plataforma
 permissions:
   contents: write
   pages: write
@@ -14,34 +14,38 @@ concurrency:
   cancel-in-progress: false
 jobs:
   update-and-publish:
+    # Evitar publicação recursiva em caso de commit automático.
+    if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
+    timeout-minutes: 14
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Obter código
+      - name: Obter arquivos
         uses: actions/checkout@v4
       - name: Preparar Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+          cache: 'pip'
       - name: Instalar dependências
-        run: pip install -r requirements.txt
-      - name: Ler fontes e adicionar achados para conferência
-        continue-on-error: true # se as fontes bloquearem robôs, ainda publicamos a última versão válida
+        run: python -m pip install -r requirements.txt
+      - name: Buscar possíveis oportunidades para apuração
+        continue-on-error: true
         run: python scripts/update_opportunities.py
-      - name: Salvar catálogo no repositório
+      - name: Salvar descobertas no repositório
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add data/opportunities.json
           if ! git diff --cached --quiet; then
-            git commit -m 'chore: atualizar radar diário'
+            git commit -m 'chore: atualizar varredura de oportunidades'
             git push
           fi
       - name: Configurar GitHub Pages
         uses: actions/configure-pages@v5
-      - name: Empacotar site
+      - name: Preparar arquivos publicados
         uses: actions/upload-pages-artifact@v3
         with:
           path: '.'
