@@ -2,10 +2,10 @@
   "meta": {
     "project": "Radar História RJ",
     "verifiedAt": "2026-11-13",
-    "updatedAt": "2026-11-16T14:33:12-03:00",
+    "updatedAt": "2026-11-16T16:21:19-03:00",
     "method": "Curadoria inicial com fontes institucionais e banca oficial. Datas e condições podem mudar; prevalece o edital.",
-    "automaticScanAt": "2026-11-16T14:33:12-03:00",
-    "scanStatus": "19 fontes/consultas acessadas, 0 novos achados sem confirmação"
+    "automaticScanAt": "2026-11-16T16:21:19-03:00",
+    "scanStatus": "19 fontes/consultas acessadas, 1 novos achados sem confirmação"
   },
   "opportunities": [
     {
@@ -699,6 +699,34 @@
         "Notícia a conferir"
       ],
       "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE5FYUt0dkY2RlA1d1FTcEtOei1XVHRBT2gzRDFyZDFhZm1nQTZZc0xvcjBJcTI2UGtTVUZscy1OLThpSEpCd20wOVNWbFdvSC1CdjlRNVllZGt2QXAxVFM1TnZLdGw1dw?oc=5",
+      "sourceName": "Google Notícias · publicação a confirmar",
+      "verifiedAt": "2026-11-16",
+      "firstSeenAt": "2026-11-16",
+      "origin": "descoberta",
+      "sector": "a confirmar"
+    },
+    {
+      "id": "radar-6db1d68b9dcdb0",
+      "title": "Historiador paraguaio analisa trajetória de Horacio Cartes e pede a Lula devolução do Canhão Cristão - Canal MyNews",
+      "org": "Google Notícias · publicação a confirmar",
+      "city": "Estado do Rio",
+      "region": "A confirmar",
+      "category": "historiador",
+      "type": "A confirmar",
+      "modality": "A confirmar",
+      "start": null,
+      "end": null,
+      "deadlineTime": null,
+      "slots": "Verificar edital",
+      "salary": null,
+      "education": "Consultar fonte e requisitos específicos",
+      "description": "Achado na varredura automática de fontes públicas. Verifique se o cargo atende à formação em História, se o edital está vigente e quais são os prazos.",
+      "tags": [
+        "Novo achado",
+        "Conferir edital",
+        "Notícia a conferir"
+      ],
+      "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxOc3U4NjhycUlSV0Z0dWY4WHlPWTFKdlZiQks1MEdEUXlVX0pUMC1vYUFSSmdBSjcxTjB3R3ByWVpFYjFoMzlUV2ZXWlM1T3ZNcTE5NXlSR0xUNDZtMlFHYUxTZ3dFd1RRVEpkQldIQjA3dXpnRUZybkowQXpoM3RCWHF5Q2R4d3JUS3dQVzZLZTdPNGhwbTdyVjdlWlVoX2pxUm1DU0FudW1USElRcjhPQ2lrTGpwbnllN25EZGVGbFR0QURUaXN5RUNDZ0tfV3ljS3FKTWpKSkN3QQ?oc=5",
       "sourceName": "Google Notícias · publicação a confirmar",
       "verifiedAt": "2026-11-16",
       "firstSeenAt": "2026-11-16",
