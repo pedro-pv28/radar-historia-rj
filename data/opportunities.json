@@ -2,10 +2,10 @@
   "meta": {
     "project": "Radar História RJ",
     "verifiedAt": "2026-11-13",
-    "updatedAt": "2026-11-18T08:21:24-03:00",
+    "updatedAt": "2026-11-18T10:38:26-03:00",
     "method": "Curadoria inicial com fontes institucionais e banca oficial. Datas e condições podem mudar; prevalece o edital.",
-    "automaticScanAt": "2026-11-18T08:21:24-03:00",
-    "scanStatus": "19 fontes/consultas acessadas, 0 novos achados sem confirmação"
+    "automaticScanAt": "2026-11-18T10:38:26-03:00",
+    "scanStatus": "19 fontes/consultas acessadas, 1 novos achados sem confirmação"
   },
   "opportunities": [
     {
@@ -730,6 +730,34 @@
       "sourceName": "Google Notícias · publicação a confirmar",
       "verifiedAt": "2026-11-16",
       "firstSeenAt": "2026-11-16",
+      "origin": "descoberta",
+      "sector": "a confirmar"
+    },
+    {
+      "id": "radar-a569730341a5ff",
+      "title": "Baremas, programa, plano de trabalho - História da América - Retificado em 18/11/2026",
+      "org": "UFRRJ",
+      "city": "Seropédica",
+      "region": "A confirmar",
+      "category": "cultura",
+      "type": "A confirmar",
+      "modality": "A confirmar",
+      "start": null,
+      "end": null,
+      "deadlineTime": null,
+      "slots": "Verificar edital",
+      "salary": null,
+      "education": "Consultar fonte e requisitos específicos",
+      "description": "Achado na varredura automática de fontes públicas. Verifique se o cargo atende à formação em História, se o edital está vigente e quais são os prazos.",
+      "tags": [
+        "Novo achado",
+        "Conferir edital",
+        "Portal institucional"
+      ],
+      "url": "https://servicos.ufrrj.br/concursos/editais/Historia_da_America56-2026retificado.pdf",
+      "sourceName": "UFRRJ",
+      "verifiedAt": "2026-11-18",
+      "firstSeenAt": "2026-11-18",
       "origin": "descoberta",
       "sector": "a confirmar"
     }
