@@ -2,10 +2,10 @@
   "meta": {
     "project": "Radar História RJ",
     "verifiedAt": "2026-11-13",
-    "updatedAt": "2026-11-19T22:32:15-03:00",
+    "updatedAt": "2026-11-20T00:06:23-03:00",
     "method": "Curadoria inicial com fontes institucionais e banca oficial. Datas e condições podem mudar; prevalece o edital.",
-    "automaticScanAt": "2026-11-19T22:32:15-03:00",
-    "scanStatus": "19 fontes/consultas acessadas, 0 novos achados sem confirmação"
+    "automaticScanAt": "2026-11-20T00:06:23-03:00",
+    "scanStatus": "19 fontes/consultas acessadas, 2 novos achados sem confirmação"
   },
   "opportunities": [
     {
@@ -786,6 +786,62 @@
       "sourceName": "Google Notícias · publicação a confirmar",
       "verifiedAt": "2026-11-18",
       "firstSeenAt": "2026-11-18",
+      "origin": "descoberta",
+      "sector": "a confirmar"
+    },
+    {
+      "id": "radar-27ccb9fa0f162b",
+      "title": "Livro de historiador ituano reconstitui a vida rural paulista a partir da história de uma família - Jornal Periscópio",
+      "org": "Google Notícias · publicação a confirmar",
+      "city": "Estado do Rio",
+      "region": "A confirmar",
+      "category": "historiador",
+      "type": "A confirmar",
+      "modality": "A confirmar",
+      "start": null,
+      "end": null,
+      "deadlineTime": null,
+      "slots": "Verificar edital",
+      "salary": null,
+      "education": "Consultar fonte e requisitos específicos",
+      "description": "Achado na varredura automática de fontes públicas. Verifique se o cargo atende à formação em História, se o edital está vigente e quais são os prazos.",
+      "tags": [
+        "Novo achado",
+        "Conferir edital",
+        "Notícia a conferir"
+      ],
+      "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQYVh2Ujl4M1h6VXJuQ0VBQ1ZQYkUyeGswLW5lMm1adF95RW5CbkdWVjdPMG1sMDFtR1JOWWg5WFdVOWxHUnpMLTI4bnBFTG1VMS1ZVFIwODh0ZFg4SWxubHo3bWRObTVSZklscFJOV2dEcTlhX3NnQzVhOGRhMmQxdnhDX3N2S0psYVhfdzNqOWt3N1F1VFdPNHFPbmw2UGlMOWtBSGFUb1F5VmJSaXRvS3J6a2FsSDZJUFVWaUk5TEtmUWpZcEFDWmJqLVZHQk5E?oc=5",
+      "sourceName": "Google Notícias · publicação a confirmar",
+      "verifiedAt": "2026-11-20",
+      "firstSeenAt": "2026-11-20",
+      "origin": "descoberta",
+      "sector": "a confirmar"
+    },
+    {
+      "id": "radar-200860e0654bc5",
+      "title": "Historiador de Columbia diz que independência preservou o poder de colonos - O Cafezinho",
+      "org": "Google Notícias · publicação a confirmar",
+      "city": "Estado do Rio",
+      "region": "A confirmar",
+      "category": "historiador",
+      "type": "A confirmar",
+      "modality": "A confirmar",
+      "start": null,
+      "end": null,
+      "deadlineTime": null,
+      "slots": "Verificar edital",
+      "salary": null,
+      "education": "Consultar fonte e requisitos específicos",
+      "description": "Achado na varredura automática de fontes públicas. Verifique se o cargo atende à formação em História, se o edital está vigente e quais são os prazos.",
+      "tags": [
+        "Novo achado",
+        "Conferir edital",
+        "Notícia a conferir"
+      ],
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPc2JLRmFrWC1HZmhfeHNVUjhBS0Jzcnk4S2t2S2libUx5ZmhZbjVJRVhJWDJMSDMyQTI0RnlSZFB2UFVHN3NIVm1xY2t0eHE4RTgwNWttNHNxT0JXeTJQZFUyN0xrOTVEeVhodkRsbGxkRUNoLVhpbHpGcUp2NFlka19hdHFpVzVuT0NvWmQ3YjRUZElmeC1JSmJQTHk2SlcyMGRLOWU0b0tJTlEzSzA2VVdWa9IBuAFBVV95cUxOZVFDbWpVdFpDOEhCMU1mSzcxRWQzVFhxWGVMYzJNSV9VbzRCOXJGYk9vU1JXcF9sM0tyalpzYW04NXMta3lNWnNFNDhmdmZISUVKbjg4aU5tejduOVNNdlFKZWlJcHJ4R1NKdXBiR2dJTExGRWVBT3h1NmVXNW9CZjBibUd2TVJoVy1WWDNQcG1fWHBJRVRjLXZndUN5cXBCT05IWTFVR3hYajVzYmNqeEtDSWpUeDlM?oc=5",
+      "sourceName": "Google Notícias · publicação a confirmar",
+      "verifiedAt": "2026-11-20",
+      "firstSeenAt": "2026-11-20",
       "origin": "descoberta",
       "sector": "a confirmar"
     }
