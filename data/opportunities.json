@@ -2,10 +2,10 @@
   "meta": {
     "project": "Radar História RJ",
     "verifiedAt": "2026-11-13",
-    "updatedAt": "2026-11-23T18:11:28-03:00",
+    "updatedAt": "2026-11-23T20:14:39-03:00",
     "method": "Curadoria inicial com fontes institucionais e banca oficial. Datas e condições podem mudar; prevalece o edital.",
-    "automaticScanAt": "2026-11-23T18:11:28-03:00",
-    "scanStatus": "18 fontes/consultas acessadas, 0 novos achados sem confirmação"
+    "automaticScanAt": "2026-11-23T20:14:39-03:00",
+    "scanStatus": "18 fontes/consultas acessadas, 1 novos achados sem confirmação"
   },
   "opportunities": [
     {
@@ -898,6 +898,34 @@
       "sourceName": "Google Notícias · publicação a confirmar",
       "verifiedAt": "2026-11-21",
       "firstSeenAt": "2026-11-21",
+      "origin": "descoberta",
+      "sector": "a confirmar"
+    },
+    {
+      "id": "radar-751834573d255c",
+      "title": "Niterói em transformação: o que a cidade guarda além da paisagem, segundo historiador da UFF - A Seguir Niterói",
+      "org": "Google Notícias · publicação a confirmar",
+      "city": "Estado do Rio",
+      "region": "A confirmar",
+      "category": "historiador",
+      "type": "A confirmar",
+      "modality": "A confirmar",
+      "start": null,
+      "end": null,
+      "deadlineTime": null,
+      "slots": "Verificar edital",
+      "salary": null,
+      "education": "Consultar fonte e requisitos específicos",
+      "description": "Achado na varredura automática de fontes públicas. Verifique se o cargo atende à formação em História, se o edital está vigente e quais são os prazos.",
+      "tags": [
+        "Novo achado",
+        "Conferir edital",
+        "Notícia a conferir"
+      ],
+      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOYUJQY3h2TEY1c0wyRGlTRjQ3dmotZm1uQ05GYzlMVVhoVDBCNW1saFN5OUFwTnlCUG9WLXBFUmczNlJ5Nl9oZmtQMEZ4bXRDZ3gzT0NrZkhzM3RFeURhb3V4WTdTNUFjNEJsWnRqa1ZLVlF6c1VDVWV1alRSUFh4X2RBTldDR180VXZCcnRIYTdvVVBOYVZJcFlBWldZWlVFS2d5YzN3dTFVV2xVY1hpbWJUbExRQUdsclFJNDBGamJHZXRFUkxwaVVB?oc=5",
+      "sourceName": "Google Notícias · publicação a confirmar",
+      "verifiedAt": "2026-11-23",
+      "firstSeenAt": "2026-11-23",
       "origin": "descoberta",
       "sector": "a confirmar"
     }
