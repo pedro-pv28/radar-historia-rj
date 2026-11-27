@@ -2,10 +2,10 @@
   "meta": {
     "project": "Radar História RJ",
     "verifiedAt": "2026-11-13",
-    "updatedAt": "2026-11-27T16:21:32-03:00",
+    "updatedAt": "2026-11-27T18:15:47-03:00",
     "method": "Curadoria inicial com fontes institucionais e banca oficial. Datas e condições podem mudar; prevalece o edital.",
-    "automaticScanAt": "2026-11-27T16:21:32-03:00",
-    "scanStatus": "17 fontes/consultas acessadas, 0 novos achados sem confirmação"
+    "automaticScanAt": "2026-11-27T18:15:47-03:00",
+    "scanStatus": "18 fontes/consultas acessadas, 1 novos achados sem confirmação"
   },
   "opportunities": [
     {
@@ -954,6 +954,34 @@
       "sourceName": "Google Notícias · publicação a confirmar",
       "verifiedAt": "2026-11-26",
       "firstSeenAt": "2026-11-26",
+      "origin": "descoberta",
+      "sector": "a confirmar"
+    },
+    {
+      "id": "radar-46e9d62ebaedee",
+      "title": "8 (novos) vícios do professor e do ensino de História - Ensinar História",
+      "org": "Google Notícias · publicação a confirmar",
+      "city": "Estado do Rio",
+      "region": "A confirmar",
+      "category": "professor",
+      "type": "A confirmar",
+      "modality": "A confirmar",
+      "start": null,
+      "end": null,
+      "deadlineTime": null,
+      "slots": "Verificar edital",
+      "salary": null,
+      "education": "Consultar fonte e requisitos específicos",
+      "description": "Achado na varredura automática de fontes públicas. Verifique se o cargo atende à formação em História, se o edital está vigente e quais são os prazos.",
+      "tags": [
+        "Novo achado",
+        "Conferir edital",
+        "Notícia a conferir"
+      ],
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQbzgxdDdwWmI5VnB4cndWR19KOFlzbUpzZ0c0NEd2bEZCM3ExVXJNQzRVTmdVU1RqSFJTSE5xT1d3ejAwN0JZcUM3ckNsaFp4NEhTNkJCckdNUV9VNVl0Rk1PWlg1RmhFb2R5aWZZeUNrWTFTY1FnZkJyN2puY3VEVkNDZw?oc=5",
+      "sourceName": "Google Notícias · publicação a confirmar",
+      "verifiedAt": "2026-11-27",
+      "firstSeenAt": "2026-11-27",
       "origin": "descoberta",
       "sector": "a confirmar"
     }
